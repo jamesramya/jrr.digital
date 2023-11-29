@@ -1,2 +1,2 @@
 # jrr.digital
-Archive of jrr.digital on Micro.blog
+Archive of [jrr.digital](https://jrr.digital) site hosted on Micro.blog
