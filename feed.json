@@ -7,6 +7,15 @@
 	"items": [
 		
 			{
+				"id": "http://jrr.micro.blog/2024/01/11/came-across-this.html",
+				
+				"content_html": "<p>Came across <a href=\"https://anniemueller.com/love-depends-on-me/\">this post</a> by <a href=\"https://micro.blog/annie\">@annie</a></p>\n<p>While I loved the initial thought,</p>\n<blockquote>\n<p>The love I give doesn’t depend on the person I’m loving. It depends on me.</p>\n</blockquote>\n<p>What I loved more was the inversion she does in the later part.</p>\n<blockquote>\n<p>Other people love me the way they love me because of who they are. Not because of who I am.</p>\n</blockquote>\n<p>Check it out</p>\n<!-- raw HTML omitted -->\n",
+				"content_text": "Came across [this post](https://anniemueller.com/love-depends-on-me/) by [@annie](https://micro.blog/annie)\r\n\r\nWhile I loved the initial thought, \r\n> The love I give doesn’t depend on the person I’m loving. It depends on me.\r\n\r\nWhat I loved more was the inversion she does in the later part.\r\n> Other people love me the way they love me because of who they are. Not because of who I am.\r\n\r\nCheck it out\r\n<blockquote class=\"quoteback\" data-title=\"\" data-author=\"annie mueller\" data-avatar=\"https://anniemueller.com/wp-content/uploads/2023/08/imageedit_12_3157381933-480x640.png\">\r\n<b>Love depends on me</b>\r\n<footer>annie mueller <cite><a href=\"https://anniemueller.com/love-depends-on-me/\" class=\"u-in-reply-to\">https://anniemueller.com/love-depends-on-me/</a></cite></footer></blockquote><script src=\"https://micro.blog/quoteback.js\"></script>\n",
+				"date_published": "2024-01-11T16:11:20+08:00",
+				"url": "https://jrr.digital/2024/01/11/came-across-this.html",
+				"tags": ["Links"]
+			},
+			{
 				"id": "http://jrr.micro.blog/2024/01/09/today-through-maiques.html",
 				
 				"content_html": "<p>Today through <a href=\"https://micro.blog/maique\">@maique</a>&rsquo;s <a href=\"https://maique.eu/2024/01/08/were-building-pika.html\">post</a> I got to know about <a href=\"https://pika.page\">Pika</a>, a new blogging platform. But what was more interesting was the company behind it—<a href=\"https://goodenough.us/\">Good Enough</a>.</p>\n<p>They have some tiny delightful products—<a href=\"https://letterbird.co/\">Letterbird</a>, <a href=\"https://beta.quack.page/\">Quack</a> and many <a href=\"https://goodenough.us/lab/\">more</a>.</p>\n",
@@ -21,7 +30,8 @@
 				"content_html": "<p>We welcomed the new year in a train, sleeping in our upper berths. A new experience for us, but also very appropriate since we will be travelling from Malaysia to another country this year.</p>\n<p>We reached Madurai as the last leg of our India trip. The morning was spent in a quick visit to Meenatchi Amman temple.</p>\n<p>This was promptly followed by a visit to New Shri Ram Mess. Basic but tasty meals on banana leaf.</p>\n<p><img src=\"https://jrr.digital/uploads/2024/837a18c56b.jpg\" alt=\"\"></p>\n",
 				"content_text": "We welcomed the new year in a train, sleeping in our upper berths. A new experience for us, but also very appropriate since we will be travelling from Malaysia to another country this year. \n\nWe reached Madurai as the last leg of our India trip. The morning was spent in a quick visit to Meenatchi Amman temple. \n\nThis was promptly followed by a visit to New Shri Ram Mess. Basic but tasty meals on banana leaf.\n\n![](https://jrr.digital/uploads/2024/837a18c56b.jpg) \n",
 				"date_published": "2024-01-02T16:32:51+08:00",
-				"url": "https://jrr.digital/2024/01/02/we-welcomed-the.html"
+				"url": "https://jrr.digital/2024/01/02/we-welcomed-the.html",
+				"tags": ["Micro"]
 			},
 			{
 				"id": "http://jrr.micro.blog/2023/12/27/john-olivers-take.html",
@@ -38,7 +48,8 @@
 				"content_html": "<p>Merry Christmas! 🎄</p>\n<p>Usually Christmas is at home or with family, but this time it is mostly on the road. Initially I was bummed by this, particularly it went contrary to our careful planning of comfortable travel and being with family.</p>\n<p>But now I’m seeing this as the spirit of the season, after all the little Christ was born on a travel and in a short stay in the middle of nowhere.</p>\n<p>I tell myself, it is important to remember that one  is surrounded my ones they love. And that is all that matters.</p>\n<p>❤️</p>\n",
 				"content_text": "Merry Christmas! 🎄\n\nUsually Christmas is at home or with family, but this time it is mostly on the road. Initially I was bummed by this, particularly it went contrary to our careful planning of comfortable travel and being with family.\n\nBut now I’m seeing this as the spirit of the season, after all the little Christ was born on a travel and in a short stay in the middle of nowhere.\n\nI tell myself, it is important to remember that one  is surrounded my ones they love. And that is all that matters. \n\n❤️\n",
 				"date_published": "2023-12-25T10:01:57+08:00",
-				"url": "https://jrr.digital/2023/12/25/merry-christmas-usually.html"
+				"url": "https://jrr.digital/2023/12/25/merry-christmas-usually.html",
+				"tags": ["Micro"]
 			},
 			{
 				"id": "http://jrr.micro.blog/2023/12/17/the-nativity-setup.html",
