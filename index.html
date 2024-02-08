@@ -24,10 +24,149 @@
 	
 	  <div class="h-entry">
 		
-			<h1><a href="https://jrr.digital/2024/01/28/fighter.html">Fighter, 2024 - ★★★½</a></h1>
+
+		<a href="https://jrr.digital/2024/02/08/copper-grillhouse-ttdi.html" class="u-url"><time class="dt-published" datetime="2024-02-08 22:50:29 &#43;0800">Feb 8, 2024</time></a>
+
+		<div class="e-content">
+			 <h2 id="copper-grillhouse-ttdi-kuala-lumpurhttpsmapsappgoogltoumzdzlwq3omin27"><a href="https://maps.app.goo.gl/toumZdZLWq3omiN27">Copper Grillhouse, TTDI, Kuala Lumpur</a></h2>
+<p>A few weeks ago, we were invited to the inauguration of the newest restaurant in TTDI — Copper Grillhouse. It is the international avatar of the famous Copper Chimney chain of restaurants in India. They specialise in North Indian and North West Frontier cuisine.<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Overall we enjoyed the 5 course meal and the celebration. Here are notes on some of the dishes we really enjoyed.</p>
+<p>For starters we had Kadak Roomali Roti and Chandni Chowk Chaat. I&rsquo;ve always relished the soft, chewy and cloth like thin Roomali Rotis, but this was the first time we had them crisp, in the shape of a wok. Also it was topped with a generous amount of Butter and spice powders, making it a tempting eat.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>From the Tandoor Grills we limited ourselves to just had Paneer Tikka and Chicken Tikka, as we didn&rsquo;t want to fill ourselves before the main course. The Chicken Tikka was really tender and the dry mango powder (aamchur) in its marinade gave it a nice tang!</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Between the courses, there was a nice performance by traditional Malay dance artists!</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>For the mains, we had the Lasooni Corn Palak. Lamb Rogan Josh and Gosht Dum Biryani. The gravies came with a bread basket. While the palak (spinach) was tasty with the kick of fried garlic, it had something grainy in it like sand, so we just let it be. The Lamb Rogan Josh was just perfect in every way. The gravy was deep red, silky smooth, tangy and spicy. And the meat was soft to the touch. We lapped it up.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>By the time we came to the biryani, we were stuffed. We decided to taste just a spoon of it, but ended up having way more! 🙈 <!-- raw HTML omitted -->
+It was one of the highlights of the evening for us.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>We finished it all with one of the excellent Jabeli&rsquo;s I have had in the recent times — crisp, not too sweet and mildly tangy.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>We were invited to the event, so we have no idea of the prices of these dishes. But we really enjoyed the food and would highly recommend it!</p>
+<p>#DiningOut #MalaysianDiary</p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
 		
 
-		<a href="https://jrr.digital/2024/01/28/fighter.html" class="u-url"><time class="dt-published" datetime="2024-01-28 22:49:44 &#43;0800">Jan 28, 2024</time></a>
+		<a href="https://jrr.digital/2024/02/01/i-am-pretty.html" class="u-url"><time class="dt-published" datetime="2024-02-01 15:51:00 &#43;0800">Feb 1, 2024</time></a>
+
+		<div class="e-content">
+			 <p>I am pretty pleased that I finally found a way to collect quotes from all the notes in my <a href="https://obsidian.md">Obsidian</a> Vault. I am using Dataview to query it out.</p>
+<p>All thanks to GPT4. We went back and forth with the code, the errors, the gaps in the logic and finally after a day I am pleased with what I have now!</p>
+<p>Hope it is useful to those looking for something similar. One thing to note before you proceed, my quotes all use Markdown Admonitions syntax of <code>&gt;[!quote]</code> and has the tag <code>#Quote</code></p>
+<pre tabindex="0"><code class="language-dataviewjs" data-lang="dataviewjs">
+async function loadQuotes() {
+    let quotes = [];
+    const pages = await dv.pages(&quot;#Quote&quot;);
+
+    for (const page of pages) {
+        const content = await dv.io.load(page.file.path);
+        if (typeof content === &quot;string&quot;) {
+            let inQuoteBlock = false;
+            let quoteBuffer = [];
+
+            content.split('\n').forEach((line) =&gt; {
+                if (line.trim().match(/^&gt;\s*\[!quote\]/) &amp;&amp; line.includes(&quot;#Quote&quot;)) {
+                    if (inQuoteBlock) {
+                        addQuote(quotes, quoteBuffer, page);
+                    }
+                    inQuoteBlock = true;
+                    let titlePart = line.split(&quot;#Quote&quot;)[1] || &quot;&quot;;
+                    quoteBuffer = [`&lt;b&gt;${titlePart.trim()}&lt;/b&gt;`];
+                } else if (inQuoteBlock) {
+                    if (line.trim() === &quot;&quot;) {
+                        addQuote(quotes, quoteBuffer, page);
+                        inQuoteBlock = false;
+                    } else {
+                        let formattedLine = line.trim().replace(/^&gt;{1,2}/, '').trim().replace(&quot;[!quote]&quot;, &quot;&quot;).replace(&quot;#Quote&quot;, &quot;&quot;);
+                        quoteBuffer.push(formattedLine);
+                    }
+                }
+            });
+
+            if (inQuoteBlock &amp;&amp; quoteBuffer.length &gt; 0) {
+                addQuote(quotes, quoteBuffer, page);
+            }
+        }
+    }
+
+    quotes.sort((a, b) =&gt; b.rawModifiedTime - a.rawModifiedTime);
+    let numberedQuotes = quotes.map((q, index) =&gt; [index + 1, q.quote, q.source]);
+    dv.table([&quot;#&quot;, &quot;Quote&quot;, &quot;Source&quot;], numberedQuotes);
+
+    function addQuote(quotes, quoteBuffer, page) {
+        let modifiedTime = page.file.mtime ? dv.date(page.file.mtime) : 'Unknown';
+        quotes.push({
+            quote: quoteBuffer.join(&quot;&lt;br&gt;&quot;),
+            source: `[[${page.file.name}]]`,
+            rawModifiedTime: page.file.mtime || 0
+        });
+    }
+}
+
+loadQuotes();
+
+</code></pre>
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+
+		<a href="https://jrr.digital/2024/01/31/killer-soup-finished.html" class="u-url"><time class="dt-published" datetime="2024-01-31 12:39:35 &#43;0800">Jan 31, 2024</time></a>
+
+		<div class="e-content">
+			 <h2 id="-killer-soup-2024httpswwwthemoviedborgtv238419-killer-soup-">📺 <a href="https://www.themoviedb.org/tv/238419-killer-soup">Killer Soup, 2024</a> ★★★★</h2>
+<!-- raw HTML omitted -->
+<p>Finished this TV Series last week. We quite enjoyed the over the top acting, paired to a dark comedy and thriller setup. Every actor seems to be having a good time in their roles and it was fun to watch them all.</p>
+<p>What did not work well for me was the constant switch in languages, that was totally out of sync with the milieu and background of those actors. But that is a minor irritant and this is worth a watch!</p>
+<p>As <a href="https://www.youtube.com/watch?v=P21EWjpzsaY">Sucharita says in this video</a>, the core plot is inspired from a real life incident, which in turn was inspired by a movie scene. What a full circle the idea has gone through!</p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+
+		<a href="https://jrr.digital/2024/01/29/through-the-sunroof.html" class="u-url"><time class="dt-published" datetime="2024-01-29 13:09:25 &#43;0800">Jan 29, 2024</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<p>Through the sunroof on a rainy evening!</p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+
+		<a href="https://jrr.digital/2024/01/28/lion-king-ohboy.html" class="u-url"><time class="dt-published" datetime="2024-01-28 23:12:58 &#43;0800">Jan 28, 2024</time></a>
+
+		<div class="e-content">
+			 <h2 id="-lion-king-1994-">📽 Lion King, 1994 ★★★★★</h2>
+<!-- raw HTML omitted -->
+<p>#OhBoy has been curious about movies off late and has been asking us questions about cinema halls, do those things happen in real to those on screen etc. We explained movies to him by drawing parallel to photos and videos on mobile phone.</p>
+<p>We want him to experience the big screen, but have not been able to choose a movie appropriate for his age. So we decided to show one of my all time favourites — The Lion King. It also helped that he had a book version of the movie, handed down by his cousins. He knew the plot, so we were spared the usual flurry of questions 🙈</p>
+<p>At the end of it, he really enjoyed the movie and I am glad that his first film was one of my favourites!</p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://jrr.digital/2024/01/26/fighter.html">📽 Fighter, 2024 - ★★★½</a></h1>
+		
+
+		<a href="https://jrr.digital/2024/01/26/fighter.html" class="u-url"><time class="dt-published" datetime="2024-01-26 22:49:00 &#43;0800">Jan 26, 2024</time></a>
 
 		<div class="e-content">
 			 <!-- raw HTML omitted -->
